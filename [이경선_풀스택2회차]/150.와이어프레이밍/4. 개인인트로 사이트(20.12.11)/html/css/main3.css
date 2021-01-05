@@ -1,0 +1,346 @@
+@charset "utf-8";
+
+/*공통초기화*/
+html,body,h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/*전체배경색*/
+body {
+    /*배경-검정색*/
+    background-color: #000;
+}
+
+/******** 공통 레이아웃 ********/
+.part {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/******** 각 영역별 레이아웃 ********/
+/*A. 상단영역*/
+#top {
+    position: relative;
+    /*부모자격*/
+    height: 80px;
+    z-index: 999;
+    /*아래쪽 레이아웃박스 보다 위!*/
+}
+
+/*B. 메인영역*/
+#cont {
+    position: relative;
+    /*부모자격*/
+    height: 788px;
+    background: url(../images/bg11.jpg) no-repeat center/cover;
+}
+
+/*C. 하단영역*/
+#info {
+    position: relative;
+    /*부모자격*/
+    height: 100px;
+    padding-bottom: 10px;
+}
+
+/******** 각 구성요소 디자인 ********/
+/*1. 전체 타이틀*/
+.tit {
+    height: 100%;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 70px;
+    font: italic bold 60px 'arial';
+    /* 폰트 - 스두크/줄체 */
+    color: red;
+    
+    /*텍스트그림자로 글로우 효과*/
+    text-shadow: 0px 0px 30px red;
+}
+
+/*2. GNB메뉴*/
+.gnb {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    /*부모? #top*/
+}
+.gnb ul {
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*float된 자식의 높이값인식*/
+/*가상요소 clear:both*/
+.gnb ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    /*clear: both - block요소에만 먹힌다!*/
+}
+
+.gnb ul>li {
+    position: relative;
+    /*서브메뉴박스의 부모자격*/    
+    float: left;
+    /*block요소 옆으로 흐르게*/
+    padding: 0 10px;
+}
+.gnb ul li a {
+    /*a요소 기본셋팅 변경*/
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/*서브메뉴박스*/
+.smenu {
+    position: absolute;
+    left: 50%;
+    /*부모? 싸고있는 .gnb ul>li*/
+    transform: translateX(-50%);
+    /*가로중앙이동*/
+    width: 100px;
+    padding: 5px;
+    background: url(../images/bg_smenu.jpg) no-repeat center/cover;
+    display: none;
+    /*처음에 서브메뉴 안보임*/
+}
+/*상위메뉴 li에 마우스 오버시 하위메뉴 보이기*/
+.gnb ul>li:hover .smenu {
+    display: block;
+}
+
+.smenu ol {
+    border: 2px solid #ccc;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+/*적용우선순위를 높이기위해
+  앞에 기존 셋팅의 부모를 써준다.*/
+.gnb .smenu a {
+    color: #000;
+    font-size: 11px;
+}
+/*서브메뉴 a요소에 마우스 오버시 글자색 변경*/
+.gnb .smenu a:hover {
+    color: #f00;
+}
+/*가상요소로 별모양 넣기*/
+.gnb .smenu a::after {
+    content: "☆";
+    float: right;
+    position: relative;
+    /*현재 위치에서 위치이동이 필요한경우
+    다른요소에 영향없이 움직일때도 사용함!*/
+    top: 5px;
+    left: 5px;
+}
+/*가상요소로 마우스 오버시 꽉찬 별모양으로 변경*/
+.gnb .smenu a:hover::after {
+    content: "★";
+}
+
+/*3. 스크린박스*/
+#screen {
+    position: absolute;
+    top: 133px;
+    left: 255px;
+    /*부모? #cont*/
+    width: 701px;
+    height: 398px;
+    background-color: #000;
+    
+}
+/*스크린 아이프레임*/
+#screen iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/*4. 캐릭터 소개메뉴*/
+.clist {
+    position: absolute;
+    /*.chatxt의 부모자격*/
+    bottom: 35px;
+    left: 320px;
+    /*나의 부모는? #cont*/
+    overflow: hidden;
+    /*자식요소인 .chatxt를 숨기기위해
+    부모자격 박스에 설정함*/
+}
+
+.clist ul {   
+    margin: 0;
+    padding: 0;
+    list-style: none;
+     /*3無*/
+    overflow: hidden;
+    /*float 자식요소 높이값 인식*/
+}
+.clist ul>li {
+    float: left;
+    /*옆으로흐르게*/
+    padding: 0 10px;
+    /*패딩 양쪽 10px*/
+    cursor: zoom-in;
+    /*커서변경하기 - 돋보기모양*/
+}
+
+/*썸네일 캐릭터 이미지 크기지정으로 li 크기만들기*/
+.clist img {
+    width: 120px;
+    height: 140px;
+}
+
+/*5. 캐릭터 정보박스*/ 
+ol.chatxt {
+    position: absolute;
+    /*위치이동값을 안주면 젠틀함*/
+    top: 100%;
+    /*높이값 만큼 아래로 밀어놓기*/
+    /*부모? .clist*/
+    
+    /*크기지정*/
+    width: 120px;
+    height: 140px;
+    
+    /*글자셋팅*/
+    text-align: center;
+    font: 14px/25px;
+    
+    /*반투명배경색*/
+    background-color: rgba(255, 255, 255, 0.7);
+    
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    /*트랜지션*/
+    transition: top .4s ease-out;
+}
+
+/*캐릭터 소개메뉴 li에 마우스 오버시 .chatxt 올라오기*/
+.clist>ul>li:hover .chatxt {
+    top: 0;
+}
+
+
+/*캐릭터정보리스트*/ 
+/*부모 li의 float이 적용되지 않음*/
+/*캐릭터정보리스트 첫번째 항목(제목)에 마진,글자색/크기변경*/
+.chatxt li:first-child {
+    margin-top: 30px;
+    color: #2c15dd;
+    font-weight: bold;
+    font-size: 20px;
+}
+.chatxt li {
+    color: #000;
+    font-size: 13px;
+}
+
+/*6. 회사정보박스*/
+#info address {
+    font-style: normal;
+    /*address요소의 기본 이탤릭 해제*/
+    font-size: 15px;
+    line-height: 20px;
+    /*안쪽여백*/
+    padding-top: 20px;
+    padding-left: 20px;
+    color: #fff;
+    text-align: center;
+}
+/*하단로고이미지*/
+#info address img {
+    float: left;
+    /*이미지 옆으로 글자 흐르게*/
+    margin-right: 20px;
+    height: 80px;
+}
+
+/*7. sns 바로가기박스*/
+.sns {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /*부모? #info*/
+    
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    background-color: #000;
+}
+
+/*스프라이츠기법으로 sns 이미지 넣기*/
+.sns li {
+    float: left;
+    width: 34px;
+    height: 34px;
+    /*공통 배경이미지*/
+    background: url(../images/sprites.png);
+}
+
+.sns li:first-child {/*유튜브*/
+    background-position: -88px -116px;
+}
+.sns li:nth-child(2) {/*인스타그램*/
+    background-position: -7px -116px;
+}
+.sns li:last-child {/*페이스북*/
+    background-position: -7px -8px;
+}
+
+/*a요소 확장*/
+.sns a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*IR(배경이미지 설명)*/
+.bld {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

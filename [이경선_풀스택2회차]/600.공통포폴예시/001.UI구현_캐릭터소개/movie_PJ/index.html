@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>자기컨텐츠제목</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*배경이미지*/
+        body {
+            background: #000 url(images/mainbg.jpg) no-repeat center/auto 100%;
+        }
+
+        #logo {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #logo>img {
+            width: 100%;
+        }
+
+        /*캐릭터부모박스*/
+        #cont {
+            position: relative;
+            width: 50%;
+            height: 250px;
+            margin: 0 auto;
+            /*가로중앙*/
+            margin-top: 200px;
+            /*outline: 1px solid red;*/
+            /*박스테두리(임시) outline속성은 border와 달리 박스크기에 영향을 미치지 않는다*/
+        }
+
+        /*캐릭터박스공통*/
+        #cont>div {
+            width: 48%;
+            /*25%-2%=23%*/
+            height: 250px;
+            /*650px;*/
+            margin: 0 1%;
+            /*양쪽마진2%*/
+            text-align: center;
+            /*인라인요소중앙정렬*/
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기*/
+            background-color: rgba(0, 0, 0, .7);
+            /*                outline: 2px dotted blue;*/
+            float: left;
+            transition: all .6s ease-in-out;
+        }
+
+        /*각 캐릭터박스에 마우스 오버시 높이값 650px로 변경*/
+        #cont>div:hover {
+            height: 650px;
+            margin-top: -200px;
+            /*부모박스 기준 마진값을 마이너스로 설정하면 반대방향으로 움직인다.*/
+        }
+
+        /*각 박스 셋팅하기*/
+        #cha1 {
+            background: url(images/gcast.jpg) no-repeat center top/100% 250px;
+        }
+
+        #cha2 {
+            background: url(images/mcast.jpg) no-repeat center top/100% 250px;
+        }
+
+
+        /*캐릭터 이름셋팅*/
+        #cont>div>span {
+            color: #fff;
+            font-size: 20px;
+            margin-top: 210px;
+            display: inline-block;
+        }
+
+        /*캐릭터설명박스*/
+        #cont>div>p {
+            color: #fff;
+            font-size: 11px;
+            padding: 15px;
+            line-height: 18px;
+            /*줄간격*/
+            text-align: left;
+            /*부모 div의 text-aling:center를 상속받았으므로 이를 변경함!*/
+        }
+
+        /*캐릭터 타이틀*/
+        #cont>div>p>b {
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="logo">
+        <img src="images/logo.png" alt="logo">
+    </h1>
+
+    <!--캐릭터소개박스-->
+    <div id="cont">
+        <div id="cha1">
+            <!--캐릭터이름-->
+            <span>브리 라슨</span>
+            <!--캐릭터소개-->
+            <p>
+                <b>HOT ISSUE 1 </b><br><br>
+                마블의 새로운 히어로, 어벤져스의 희망
+                ‘캡틴 마블’ 캐릭터&오리진 무비 탄생!
+                &lt;어벤져스: 엔드게임&gt;으로 향하는 라스트 스텝!<br><br>
+
+                2019년 마블 시네마틱 유니버스의 포문을 여는 작품이자 &lt;어벤져스: 엔드게임&gt;을 향한 라스트 스텝, 전 세계의 스포트라이트를 받고 있는 영화 &lt;캡틴 마블&gt;이 3월 6일(수) 드디어 출격한다.<br><br>
+
+                2018년 &lt;블랙 팬서&gt;의 전 지구적 흥행 돌풍에 이어 2년 연속 마블 솔로무비 흥행 불패 신화를 이어갈 영화 &lt;캡틴 마블&gt;은 기억을 잃은 파일럿 캐럴 댄버스(브리 라슨)가 쉴드 요원 닉 퓨리(사무엘 L. 잭슨)를 만나 어벤져스의 마지막 희망 ‘캡틴 마블’로 거듭나는 이야기를 담은 2019년 첫 마블 스튜디오 작품이다.<br><br>
+
+                2018년 국내 1,100만 명 이상 관객을 동원한 &lt;어벤져스: 인피니티 워&gt;의 마지막 장면을 통해 위기에 빠진 어벤져스의 마지막 희망으로써 &lt;어벤져스: 엔드게임&gt; 출연이 예고된 마블의 차세대 히어로 캡틴 마블의 탄생을 그린다. 캡틴 마블은 파일럿 출신에서 기원한 비행 능력, 우주의 위대한 전사 크리의 일원으로서 얻은 강력한 파워, 그리고 인간적인 면모까지 더해 색다른 히어로로 그려질 전망이다.
+            </p>
+        </div>
+        <div id="cha2">
+            <!--캐릭터이름-->
+            <span>주드 로</span>
+            <!--캐릭터소개-->
+            <p>
+
+                <b>HOT ISSUE 2 </b><br><br>
+                마블의 새로운 히어로, 어벤져스의 희망
+                ‘캡틴 마블’ 캐릭터&오리진 무비 탄생!
+                &lt;어벤져스: 엔드게임&gt;으로 향하는 라스트 스텝!<br><br>
+
+                2019년 마블 시네마틱 유니버스의 포문을 여는 작품이자 &lt;어벤져스: 엔드게임&gt;을 향한 라스트 스텝, 전 세계의 스포트라이트를 받고 있는 영화 &lt;캡틴 마블&gt;이 3월 6일(수) 드디어 출격한다.<br><br>
+
+                2018년 &lt;블랙 팬서&gt;의 전 지구적 흥행 돌풍에 이어 2년 연속 마블 솔로무비 흥행 불패 신화를 이어갈 영화 &lt;캡틴 마블&gt;은 기억을 잃은 파일럿 캐럴 댄버스(브리 라슨)가 쉴드 요원 닉 퓨리(사무엘 L. 잭슨)를 만나 어벤져스의 마지막 희망 ‘캡틴 마블’로 거듭나는 이야기를 담은 2019년 첫 마블 스튜디오 작품이다.<br><br>
+
+                2018년 국내 1,100만 명 이상 관객을 동원한 &lt;어벤져스: 인피니티 워&gt;의 마지막 장면을 통해 위기에 빠진 어벤져스의 마지막 희망으로써 &lt;어벤져스: 엔드게임&gt; 출연이 예고된 마블의 차세대 히어로 캡틴 마블의 탄생을 그린다. 캡틴 마블은 파일럿 출신에서 기원한 비행 능력, 우주의 위대한 전사 크리의 일원으로서 얻은 강력한 파워, 그리고 인간적인 면모까지 더해 색다른 히어로로 그려질 전망이다.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

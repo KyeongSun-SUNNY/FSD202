@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tvN 신서유기8</title>
+    <!--외부CSS불러오기-->
+    <link rel="stylesheet" href="css/main3.css">
+</head>
+
+<body>
+    <!--
+        저작도구선정 : 어도비 브라켓
+    -->
+   
+   
+    <!--A. 상단영역-->
+    <header id="top" class="part">
+        <!--1. 전체타이틀-->
+        <h1 class="tit">
+            tvN
+        </h1>
+        <!--2. 전체메뉴(GNB)-->
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="">프로그램소개</a>
+                    <!--서브메뉴-->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">
+                                    (귀)신과함께
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    거봉거봉
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    홈커밍
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    옛날옛적에
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="">출연진 소개</a>
+                    <!--서브메뉴-->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">
+                                    놀부네
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    흥부네
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    제비
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="">미리보기</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">
+                                    다시보기
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    예고편
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    클립영상
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="">시청자 게시판</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">
+                                    오류제보
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    건의사항
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--B. 메인영역-->
+    <main id="cont" class="part">
+        <!--3. 스크린-->
+        <div id="screen">
+            <iframe id="ifr" src="https://www.youtube.com/embed/X_hNZSYz4qE?autoplay=1" allow="autoplay"></iframe>
+            <!--
+                iframe으로 유튜브 동영상 페이지 가져오기
+                
+                - src 불러올 페이지 경로
+                유튜브 경로 구성:
+                https://www.youtube.com/embed/동영상id
+                
+                - 유튜브 경로 맨끝 동영상id 뒤에 아래와 같이
+                ?autoplay=1
+                추가해주면 동영상 로드시 자동플레이옵션 선택
+                
+                - allow 속성추가!
+                allow="autoplay" 자동재생 허용 옵션을 반드시 써준다(그래야 자동재생이 된다!)
+            -->
+        </div>
+        <!--4. 캐릭터 소개메뉴-->
+        <nav class="clist">
+            <ul>
+                <li>
+                    <img src="images/hodong.png" alt="강호동">
+                    <!--인물정보-->
+                    <ol class="chatxt">
+                        <li>강호동</li>
+                        <li>(호금 호동 호은)</li>
+                        <li>계속 먹어도 배고픈</li>
+                        <li>흥부 아들</li>
+                    </ol>
+                </li>
+                <li>
+                    <img src="images/sugeun.png" alt="이수근">
+                    <!--인물정보-->
+                    <ol class="chatxt">
+                        <li>이수근</li>
+                        <li>(인간 조롱박)</li>
+                        <li>예능감으로 속이 꽉</li>
+                        <li>조롱박</li>
+                    </ol>
+                </li>
+                <li>
+                    <img src="images/jiwon.png" alt="은지원">
+                    <!--인물정보-->
+                    <ol class="chatxt">
+                        <li>은지원</li>
+                        <li>(은그리버드)</li>
+                        <li>제비 대신 알바 온</li>
+                        <li>은그리버드</li>
+                    </ol>
+                </li>
+                <li>
+                    <img src="images/gyuhyun.png" alt="조규현">
+                    <!--인물정보-->
+                    <ol class="chatxt">
+                        <li>조규현</li>
+                        <li>(규부인)</li>
+                        <li>지고는 못 사는</li>
+                        <li>놀부 부인</li>
+                    </ol>
+                </li>
+                <li>
+                    <img src="images/minho.png" alt="송민호">
+                    <!--인물정보-->
+                    <ol class="chatxt">
+                        <li>송민호</li>
+                        <li>(흥부(자))</li>
+                        <li>등골이 휘어도 쿨한</li>
+                        <li>힙스터</li>
+                    </ol>
+                </li>
+                <li>
+                    <img src="images/po.png" alt="피오">
+                    <!--인물정보-->
+                    <ol class="chatxt">
+                        <li>피오</li>
+                        <li>(표놀부)</li>
+                        <li>다 가지고 싶은 욕심쟁이</li>
+                        <li>놀부</li>
+                    </ol>
+                </li>
+
+            </ul>
+        </nav>
+
+
+    </main>
+
+    <!--C. 하단영역-->
+    <footer id="info" class="part">
+        <!--5. 회사정보-->
+        <address>
+            <img src="images/b_logo.png" alt="하단로고">
+            대표이사 : 허민회, 허민호 |  사업자정보확인 개인정보관리 책임자 : 김재환 <br>
+            사업자등록번호 : 106-81-51510 통신판매신고번호 : 서초 제 000015호 <br>
+            본점 : 서울특별시 서초구 과천대로 870-13 (방배동) 사업장 : 서울특별시 마포구 상암산로 66 (상암동) <br>
+            Copyright (C) CJ ENM All Rights Reserved.
+        </address>
+        <!--6. SNS 아이콘-->
+        <ul class="sns">
+            <li>
+                <a href="https://www.youtube.com/playlist?list=PLr0T5CaHaPwXCI06IXUCpyKSDxZ8wqbEx" target="_blank">
+                    <span class="bld">유튜브 바로가기</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/tvnbros/" target="_blank">
+                    <span class="bld">인스타그램 바로가기</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="https://www.facebook.com/tvnbros" target="_blank">
+                    <span class="bld">페이스북 바로가기</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body></html>

@@ -1,0 +1,406 @@
+@charset "utf-8";
+/*언프리티 메인페이지 CSS - main.css*/
+
+/*공통*/
+html,body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #000;
+}
+/*공통 class*/
+.dn {/*안보임처리*/
+    display: none;
+}
+.bld {/*IR*/
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/*디자인 검수용*/
+#dsn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /*가로방향 중앙이동*/
+    opacity: 0.5;
+    display: none;
+    z-index: 10;
+}
+
+/*전체박스*/
+.wrap {
+    position: relative;
+    /*부모자격*/
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    background: url(../images/bg.jpg) no-repeat;
+}
+
+/*큰별*/
+#bigstar{
+    transform: scale(0) rotateY(720deg);
+    /*셋팅순서 중요!*/
+    
+    /*애니메이션:이시이지반방마*/
+    animation: rotScale 3s  ease-in-out forwards;
+}
+
+/*큰별과 랩퍼박스의 키프레임*/
+/*변경사항: 스케일 복원(1), Y축회전 복원(0deg)*/
+@keyframes rotScale{
+    to {
+        transform: scale(1) rotateY(0deg)
+    }
+}/*키프레임*/
+
+
+/*로고박스*/
+.logo {
+    position: absolute;
+    /*위치값없으면 젠틀!, 크기안주면 내용만큼!*/
+    top: 20px;
+    left: 2%;
+    /*나의부모? .wrap*/
+    width: 96%;
+    /*가로크기 주기*/
+}
+/*두번째 로고 오른쪽 끝으로!*/
+.logo img:last-child {
+    float: right;
+}
+
+/*메인로고*/
+#mlogo {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    /*나의부모? .wrap*/
+    
+    /*트랜스폼 셋팅*/
+    transform: translate(-50%,-50%) rotate(180deg);
+    /*정중앙이동!*/
+    transform-origin: bottom;
+    /*회전시 아래쪽으로 기준선을 변경*/
+    
+    opacity: 0;
+    /*투명하게!*/
+    
+    /*애니메이션: 이시이지반방마*/
+    animation: mlogo 2s ease-in-out 4s forwards;
+    
+}
+
+/*메인로고 키프레임*/
+@keyframes mlogo{
+    to{
+        opacity: 1;
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}/*키프레임*/
+
+
+/*랩퍼컨텐츠 박스*/
+.cont {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*잡아늘려 채우기!*/
+}
+
+/*랩퍼박스 공통*/
+.rapper {
+    position: absolute;
+    /*부모는? .cont*/
+    width: 170px;
+    height: 170px;
+    border: 10px solid #ccc;
+    border-radius: 50%;/*원*/
+    box-sizing: border-box;
+    /*보더,패딩을 포함하는 박스*/
+    
+    /*배경셋팅*/
+    background-color: #000;
+    background-image: url(../images/tv3_small.png);
+    background-repeat: no-repeat;
+    background-position: center 150px;
+    background-size: 160px;
+    
+    /*트랜지션:속시이지*/
+    transition: background-position .4s ease-out;   
+    
+    /*트랜스폼 셋팅*/
+    transform: scale(0) rotate(720deg);
+        
+    /*애니메이션:이시이지반방마*/
+    animation: rotScale .8s  ease-in-out 3s forwards;
+}
+/*랩퍼박스에 마우스 오버시 배경 tv이미지 올라오기*/
+.rapper:hover {
+    background-position: center 5px;
+}
+
+
+/*뮤지션 공통*/
+.mu {
+    position: absolute;
+    top: -10px;
+    left: -10px;/*부모내부 보더만큼이동*/
+    /*부모? .rapper*/
+    width: 100%;
+    height: 100%;
+    
+    /*배경설정*/
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 195px;
+    
+    border: 10px solid #ccc;
+    border-radius: 50%;   
+    
+    /*트랜지션:속시이지*/
+    transition: all .4s ease-out;    
+}
+
+/*랩퍼박스에 마우스 오버시 자식(.mu)요소 변경하기*/
+.rapper:hover .mu {
+    width: 220px;
+    height: 500px;
+    border-radius: 7px;
+}
+
+
+
+/*개별 랩퍼셋팅하기*/
+
+/*1. 애쉬비*/
+.r1 {
+    /*랩퍼개별위치값*/
+    top: 19px;
+    left: 416px;    
+}
+.r1 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01ash-b.png);
+    background-position: -28px 14px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r1:hover .mu {
+    top: 239px;
+    left: -26px;
+    background-position: 17px 51px;
+}
+
+/*2. 엑시*/
+.r2 {
+    /*랩퍼개별위치값*/
+    top: 69px;
+    right: 160px;   
+}
+.r2 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01EXY.png);
+    background-position: -31px 11px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r2:hover .mu {
+    top: 190px;
+    left: -280px;
+    background-position: -5px 30px;
+}
+
+/*3. 헤이즈*/
+.r3 {
+    /*랩퍼개별위치값*/
+    top: 290px;
+    right: 20px;   
+}
+.r3 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01heize.png);
+    background-position: -23px -9px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r3:hover .mu {
+    top: -31px;
+    left: -420px;
+    background-position: 14px 20px;
+}
+
+/*4. 효린*/
+.r4 {
+    /*랩퍼개별위치값*/
+    bottom: 300px;
+    right: 20px;   
+}
+.r4 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01hyorin.png);
+    background-position: -14px 4px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r4:hover .mu {
+    top: -271px;
+    left: -420px;
+    background-position: 20px 51px;
+}
+
+/*5. 전지윤*/
+.r5 {
+    /*랩퍼개별위치값*/
+    bottom: 68px;
+    right: 161px;   
+}
+.r5 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01jenyer.png);
+    background-position: -39px 8px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r5:hover .mu {
+    top: -504px;
+    left: -279px;
+    background-position: 20px 51px;
+}
+
+
+/*6. 캐스퍼*/
+.r6 {
+    /*랩퍼개별위치값*/
+    bottom: 21px;
+    left: 415px;   
+}
+.r6 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01kasper.png);
+    background-position: -20px 7px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r6:hover .mu {
+    top: -550px;
+    left: -25px;
+    background-position: 20px 51px;
+}
+
+/*7. 키디비*/
+.r7 {
+    /*랩퍼개별위치값*/
+    bottom: 68px;
+    left: 160px;   
+}
+.r7 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01kittib.png);
+    background-position: -10px 10px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r7:hover .mu {
+    top: -501px;
+    left: 230px;
+    background-position: 20px 51px;
+}
+
+/*8. 수아*/
+.r8 {
+    /*랩퍼개별위치값*/
+    bottom: 299px;
+    left: 22px;   
+}
+.r8 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01sua.png);
+    background-position: -35px 10px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r8:hover .mu {
+    top: -272px;
+    left: 370px;
+    background-position: 15px 51px;
+}
+
+/*9. 트루디*/
+.r9 {
+    /*랩퍼개별위치값*/
+    top: 288px;
+    left: 22px;   
+}
+.r9 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01truedy.png);
+    background-position: -30px -45px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r9:hover .mu {
+    top: -28px;
+    left: 370px;
+    background-position: 15px 51px;
+}
+
+/*10. 유빈*/
+.r10 {
+    /*랩퍼개별위치값*/
+    top: 69px;
+    left: 160px;   
+}
+.r10 .mu {
+    /*배경 개별설정*/
+    background-image: url(../images/01yubin.png);
+    background-position: -35px 10px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r10:hover .mu {
+    top: 190px;
+    left: 230px;
+    background-position: 15px 51px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

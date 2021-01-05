@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+/*import방식 CDN 웹폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nanum+Pen+Script&display=swap');
+
+/*
+            font-family: 'Caveat';
+            font-family: 'Nanum+Pen+Script';
+        */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /*높이값을 100%로 설정해야
+            직계자식요소의 높이값 %가 적용될 수 있음
+            body의 높이값 100%의 의미:
+            보이는 window화면을 기준한다는 뜻*/
+}
+
+/*공통 페이지*/
+.page {
+    width: 100%;
+    height: 100%;
+    /*body셋팅을 기준*/
+
+    /*공통배경셋팅*/
+    /*반복여부*/
+    background-repeat: no-repeat;
+    /*고정여부*/
+    background-attachment: fixed;
+    /*위치*/
+    background-position: center;
+    /*크기*/
+    background-size: cover;
+}
+
+/*전체 타이틀*/
+.tit {
+    position: fixed;
+    top: 60px;
+    /*부모? 보이는화면 - 화면에 고정*/
+    width: 100%;
+    /*fixed 포지션은 크기가 내용만큼 설정되므로 
+     100%로 크기를 늘려줌*/
+    margin: 0;
+    padding: 0;
+    /*기본마진,패딩 없앰*/
+    
+    text-align: center;
+    /*글자중앙*/
+
+    font-family: 'Caveat';
+    /*웹폰트 적용*/
+    
+    text-shadow: 1px 0 #000, -1px 0 #000,
+        0 1px #000, 0 -1px #000;
+    /*
+        텍스트 그림자로 테두리 만들기
+        text-shadow: 콤마로 구분하여 여러개의 그림자를 줄 수 있다
+        - 네 방향으로 그림자를 1px씩 움직여서 블러없이 수 있다.
+     */
+    z-index: 1;
+    /*아래쪽 포지션 있는 요소보다 위에 오도록 한다.*/
+}
+
+/*타이틀 a 기본셋팅 변경*/
+.tit a{
+    text-decoration: none;
+    font-size: 80px;
+    color: #666;
+}
+
+/*타이틀 스티커 셋팅*/
+a>img {
+    position: absolute;
+    /*부모? .tit*/
+    width: 80px;
+    float: left;
+    display: block;
+    /*디자인 적용위해*/
+    
+    /*트랜지션*/
+    transition: transform .4s;
+}
+/*타이틀 스티커 양쪽에 배치*/
+a>img:first-child {
+    top: 11px;
+    left: 487px;
+}
+a>img:last-child {
+    top: 11px;
+    right: 477px;
+}
+
+/*상단타이틀에 마우스 오버시 스티커 회전*/
+h1:hover a>img:first-child {
+    transform: rotate(-30deg);
+}
+h1:hover a>img:last-child {
+    transform: rotate(30deg);
+}
+
+/*메뉴 기본셋팅*/
+ul#menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*ul 3가지 없애기(3無)*/
+}
+
+/*메뉴 리스트(li) 공통*/
+#menu li {
+    position: relative;
+    /*부모자격*/
+    top: 360px;
+    left: 140px;
+    margin: 30px;
+    width: 250px;
+    height: 250px;
+
+    /*글자셋팅*/
+    text-align: center;
+    font: bold 55px/100px 'Caveat';
+    /*스두크/줄체*/
+    float: left;
+    /*옆으로 흐르게!*/
+    border-radius: 50%;
+    /*정원 만들기*/
+    background-color: rgba(96, 96, 96, 0.62);
+}
+
+/*메뉴 공통 a*/
+#menu a {
+    position: absolute;
+    /*부모? #menu li*/
+    top: 75px;
+    color: #fff;
+    text-decoration: none;
+    /*a기본 디자인 변경*/
+    text-shadow: 2px 1px 1px #777;
+    /*텍스트 그림자*/
+
+    display: block;
+    /*디자인적용위해 셋팅*/
+    width: 100%;
+    
+    /*트랜지션*/
+    transition: transform .4s;
+}
+
+/*홈화면 메뉴에 마우스 오버시 글씨크기 확대*/
+#menu:hover a{
+    transform: scale(1.1);
+}
+
+
+/*각 페이지*/
+
+/*1. 홈화면*/
+/*배경*/
+#home {
+    background-image: url(../images/bg.jpg);
+}
+
+/*첫페이지 .inbox*/
+#home .inbox {
+    position: relative;
+    /*부모자격*/
+    overflow: hidden;
+    /*자식요소인 block이 margin-top을 설정했을때 부모는 기본적으로 자식의 마진을 포함하지 않으므로 바깥쪽으로 밀려서 부모도 마진이동이 됨. 이것을 내부로 포함하려면 overflow: hidden; 을 설정하면 된다!
+            
+            [ overflow: hidden 정리 ]
+            1. 넘치는 자식컨텐츠 숨기기
+            2. float된 자식요소 높이값 인식하기
+            3. block 자식요소의 margin-top 포함하기
+            */
+}
+
+/*2. 각 페이지*/
+
+/*페이지 배경*/
+#Dokkaebi,
+#WebDiary,
+#Frozen,
+#CGV {
+    background-image: url(../images/bg.jpg);
+}
+
+/*각 페이지 재정의*/
+.inbox {
+    position: relative;
+    /*부모자격*/
+}
+
+/*페이지제목 공통*/
+.pgtit {
+    position: relative;
+    /*부모자격*/
+    top: 400px;
+    left:150px;
+    /*글자디자인*/
+    font-family: 'Caveat';
+    font-weight: bold;
+    font-size: 70px;
+    text-shadow: 3px 3px 1px #222;
+    color: #888;
+    text-decoration: none;
+}
+/*페이지설명 공통*/
+.des {    
+    position: absolute;
+    /*부모? .inbox*/
+    top: 490px;
+    left: 150px;
+    font-family: 'Caveat', 'Nanum Pen Script';
+    font-weight: bold;
+    font-size: 35px;
+    color: #444;
+    float: left;    
+}
+
+/*페이지제목에 스티커셋팅*/
+.pgtit img{
+    position: absolute;
+    /*부모? .inbox*/
+    float: left;
+    
+    /*트랜지션*/
+    transition: transform .4s;
+
+}
+/*스티커 크기 및 위치 셋팅*/
+.pgtit img:first-child {
+    width: 100px;
+    top: -23px;
+    left: -98px;
+}
+.pgtit img:last-child {
+    width: 400px;
+    top: 143px;
+    left: 10px;    
+}
+/*페이지 제목에 마우스오버시 스티커 확대*/
+.pgtit:hover img {
+    transform: scale(1.2);
+}
+
+/*미리보기 이미지 공통*/
+.pre img {
+    position: absolute;
+    /*부모? .inbox*/
+    border: 4px solid rgba(102, 102, 102, 0.42);    
+    border-radius: 50%;
+    z-index: 9999;
+    
+    /*트랜지션*/
+    transition: transform .4s;
+}
+
+/*각 미리보기 이미지 크기조정 및 위치셋팅*/
+.pre img:first-child {
+    top: 80px;
+    right: 250px;
+    width: 250px;
+    height: 250px;
+}
+.pre img:nth-child(2) {
+    top: 350px;
+    right: 500px;
+    width: 300px;
+    height: 300px;
+}
+.pre img:last-child {
+    top: 350px;
+    right: 40px;
+    width: 350px;
+    height: 350px;
+}
+
+/*미리보기 이미지에 마우스 오버시 확대,
+ 마우스 커서모양 바꾸기*/
+.pre img:hover {
+    transform: scale(1.2);
+    cursor: zoom-in;
+}
+
+/*각 페이지에 다른페이지로 갈수있는 유도버튼 만들기*/
+
+/*유도버튼 공통*/
+.gogo>a {
+   position: absolute;
+    margin: 30px;
+    /*글자셋팅*/
+    font-family: 'Caveat';
+    font-weight: bold;
+    font-size: 30px;
+    color: #d0cccc;
+    text-shadow: 1px 0 #222, -1px 0 #222,
+        0 1px #222, 0 -1px #222;
+    text-decoration: none;
+}
+
+/*유도버튼 위치셋팅*/
+.gogo>a:first-child {
+    top: 610px;
+    left: 130px;
+}
+.gogo>a:nth-child(2) {
+    top: 610px;
+    left: 280px;
+}
+.gogo>a:last-child {
+    top: 610px;
+    left: 430px;
+}
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+
+
+
+4. 하단 오른쪽 상단 (width 넘지 않게)에 SNS링크 새창열기 배치 (스플리츠기법 사용) x
+
+
+
+--------------완료--------------
+
+5. 인트로 페이지 만들기
+ 배경으로 인트로 영상 깔리게 하고 불투명도 0.5 주기
+ 겨울왕국로고 이미지와  click 버튼 만들어서 '겨울왕국 캐릭터 소개' 페이지에 가게 ㄴ하기
+
+3. 하단로고 이미지 아래에 디즈니 회사정보 넣기
+Help · Terms of Use · Privacy Policy · Interest-based Ads · About Us · The Walt Disney Company
+ⓒ Disney ⓒ Disney·Pixar ⓒ & ™ Lucasfilm LTD ⓒ Marvel.All Rights Reserved
+
+2. 하단로고 이미지에 트랜스폼으로 이미지 효과주기

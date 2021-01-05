@@ -1,0 +1,162 @@
+<! doctype html>
+<html lang="ko">
+    <head>
+    <meta charset="utf-8">
+    <title>월화드라마</title>
+    <style>
+        /*
+        
+        선택자 {
+            thrtjdaud: 값;
+        }
+        
+        */
+        table {
+            /*마진: 위아래 양쪽*/
+            margin: 30px auto;
+            /*마영오(박스중앙정렬)(마진 0 오토)*/
+            /*경계선*/
+            border: 7px solid #ccc;
+            /*
+                border: 두께 종류 색상;    
+            */
+        }
+
+        td {/*패딩*/
+            padding: 10px;
+            line-height: 45px;
+            /*줄간격*/
+        }
+
+        /* 클래스를 이용한 디자인*/
+        
+        a.on {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        button.on {
+            color: red;
+        }
+
+        button {
+            height: 25px;
+            vertical-align: middle            
+        }
+        
+        .num{
+            color: red;
+        }
+        
+        .brc{
+            color: blue;
+        }
+        
+        .nil{
+            color: dimgrey;
+        }
+        
+        .plus{
+            color: green;
+        }
+        
+       
+        
+    </style>
+</head>
+
+<body>
+    <!--1. 상단부분-->
+    <div style="text-align: center;">
+        <!--1-1.타이틀-->
+        <h1>최신드라마 - 월화드라마</h1>
+        <!--1-2.메뉴-->
+        <h2>
+            <a href="drama1.html" class="on">월화드라마</a> |
+            <a href="drama2.html" class="on">수목드라마</a> |
+            <a href="drama3.html" class="on">금토일드라마</a>
+        </h2>
+    </div>
+    <!--2. 컨텐츠 부분-->
+    <div>
+        <!--드라마테이블-->
+        <!--테이블구성: 2행 4열-->
+        <table>
+            <tr>
+                <td>
+                    <a href="">
+                        <img src="images/d1.jpg" alt="청춘기록">
+                    </a>
+                </td>
+                <td>
+                    <b>청춘기록</b> <br>
+                    <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=tvN%ED%8E%B8%EC%84%B1%ED%91%9C" class="brc" target="_blank">tvN</a> (월, 화) 오후 09:00 <br>
+                    <span class="num">7.8%</span> <span class="nil">닐슨코리아 (10.20.)</span> <br>
+                    <button class="plus">+</button>
+                    <button>구독 41,609</button>
+                    <button class="on">♡</button>
+                </td>
+                <td>
+                    <a href="">
+                        <img src="images/d2.jpg" alt="18 어게인">
+                    </a>
+                </td>
+                <td>
+                    <b>18 어게인</b> <br>
+                    <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=JTBC%ED%8E%B8%EC%84%B1%ED%91%9C" class="brc" target="_blank">JTBC</a> (월, 화) 오후 09:30 <br>
+                    <span class="num">3.2%</span> <span class="nil">닐슨코리아 (10.20.)</span> <br>
+                    <button class="plus">+</button>
+                    <button>구독 27,519</button>
+                    <button class="on">♡</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="">
+                        <img src="images/d3.jpg" alt="좀비탐정">
+                    </a>
+                </td>
+                <td>
+                    <b>좀비탐정</b> <br>
+                    <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=KBS2%ED%8E%B8%EC%84%B1%ED%91%9C" class="brc" target="_blank">KBS2</a> (월, 화) 오후 09:30 <br>
+                    <span class="num">2.6%</span> <span class="nil">닐슨코리아 (10.20.)</span> <br>
+                    <button class="plus">+</button>
+                    <button>구독 6,891</button>
+                    <button class="on">♡</button>
+                </td>
+                <td>
+                    <a href="">
+                        <img src="images/d4.jpg" alt="나의 위험한 아내">
+                    </a>
+                </td>
+                <td>
+                    <b>나의 위험한 아내</b> <br>
+                    <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=MBN%ED%8E%B8%EC%84%B1%ED%91%9C" class="brc" target="_blank">MBN</a> (월, 화) 오후 11:00 <br>
+                    <span class="num">2.4%</span> <span class="nil">닐슨코리아 (10.20.)</span> <br>
+                    <button class="plus">+</button>
+                    <button>구독 2,885</button>
+                    <button class="on">♡</button>
+
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <!--
+               table 요소 : 행과 열로 정렬해야하는 데이터를 보여주기 위한 요소
+               - tr 요소 : 행을 구분하는 요소(table row)
+               - td 요소 : 데이터를 담는 요소(table data)
+               
+               
+           -->
+
+    </div>
+
+
+
+
+
+</body></html>

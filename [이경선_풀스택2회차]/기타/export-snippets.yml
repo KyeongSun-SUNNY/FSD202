@@ -1,0 +1,21 @@
+- trigger: ff
+  description: 선언적함수폼
+  scope: javascript
+  mTime: 1608003792147
+  text: |
+            /*/////////////////////////////////////////////////\r
+                함수명:\r
+                기능: \r
+            *//////////////////////////////////////////////////\r
+            function 함수명(){\r
+                \r
+            }/////////// 함수명 함수 ////////////////////////////\r
+            ///////////////////////////////////////////////////
+
+- trigger: vp
+  description: 뷰포트 메타태그
+  scope: html
+  mTime: 1607497256830
+  text: |
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+

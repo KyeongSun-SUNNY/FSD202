@@ -1,0 +1,117 @@
+[ 사이트 구현순서 ]
+
+https://frozen.disney.com/characters
+
+1. 주제선정
+애니메이션 영화 겨울왕국1 캐릭터 소개페이지 만들기
+
+2. 자료수집(텍스트, 이미지 데이터)
+로고, 배경이미지, 캐릭터이미지, 성우이미지, 이름표이미지 등 자료수집
+성우이력 등 자료수집
+
+[캐릭터 소개]
+Elsa is the perfect mythic character – magical and larger than life.
+Grateful her kingdom now accepts her, she works hard to be a good queen. 
+But deep down she can’t help but wonder why she was born with powers.
+
+Anna is the perfect fairytale character; unflappable, she is the forever optimist.
+Anna is fine as long as she has her family, Arendelle is safe, and she never has to be alone again.
+
+Kristoff is a true outdoorsman. 
+He lives high up in the mountains where he harvests ice and sells it to the kingdom of Arendelle.
+A rugged mountain man and ice harvester by trade, Kristoff was a bit of a loner with his reindeer pal, 
+Sven, until he met Anna. 
+As Arendelle’s official Ice Master and Deliverer, 
+Kristoff has found love with Anna and his new family: Elsa, Olaf and Sven.
+
+He's Olaf and he likes warm hugs. 
+He is by far the friendliest snowman to walk the mountains above Arendelle.
+Created from Elsa’s magical powers, Olaf is by far the friendliest snowman in Arendelle. 
+He is innocent, outgoing and loves all things summer. 
+Olaf may be a bit naive, but his sincerity 
+and good-natured temperament make him a true friend to Anna and Elsa.
+
+[성우]
+엘사- 이디나 멘젤
+이디나 멘젤 (Idina Menzel) 영화배우, 가수
+출생
+1971년 5월 30일
+신체
+163cm
+데뷔
+1998년 1집 앨범 [Still I Can't Be Still]
+수상
+2004년 제28회 토니상 최우수 여우상
+
+안나- 크리스틴 벨
+크리스틴 벨 (Kristen Bell) 영화배우
+출생
+1980년 7월 18일, 미국
+신체
+155cm
+가족
+배우자 댁스 셰파드
+학력
+뉴욕대학교 티쉬예술학교 드라마 학사
+데뷔
+2001년 영화 '푸티 탕'
+수상
+2020년 제25회 크리틱스 초이스 시상식 시허상
+
+크리스토프- 조나단 그로프
+조나단 그로프 (Jonathan Groff) 영화배우, 뮤지컬 배우
+출생
+1985년 3월 26일, 미국
+신체
+180cm
+학력
+Conestoga Valley High School
+
+올라프- 조시 게드
+조시 게드 (Josh Gad) 영화배우
+출생
+1981년 2월 23일, 미국
+신체
+168cm
+수상
+2008년 쇼웨스트 컨벤션 연기 특별상
+
+3. 분석/설계(와이어프레임)
+
+4. UI/UX디자인
+-> 프로토타이핑
+    (기본기능구현/기본UI테스트) XD
+
+5. 코딩구현
+
+6. 테스트/수정
+
+7. 서버배포 
+
+
+겨울왕국
+도깨비 참고해서
+마우스 오버 전은 캐릭터
+마우스 오버시 실제목소리 녹음한 배우사진이 나오게
+
+예고동영상
+<iframe src="https://www.youtube.com/embed/S1x76DoACB8"></iframe>
+
+
+
+할일
+1.이름 라벨링 만들기(캐릭터, 성우)ok
+2. 목업 페이지 구현ok
+3. 디자인 (로봇,도깨비 pj 참조)ok
+배경 - 백그라운드 이미지(네이비색-불투명도조절) 
+배너 - 메인배너 이미지 
+
+4. 구체적 구현
+전체 레이아웃 사이즈 : 1000px 중앙정렬
+백그라운드 이미지 : 중앙정렬 100%
+배너 이미지 : 마영오, 탑 fixed
+캐릭터박스 모서리라운드
+이름라벨 이미지 가운데 위치
+기본페이지는 캐릭터 이미지와 이름, 캐릭터설명
+이미지 마우스 오버시 성우 이미지와 이름 바뀌면서
+설명박스 옆으로 나오면서 캐릭터소개박스랑 같은 크기로 설정한 성우이력박스가 나옴

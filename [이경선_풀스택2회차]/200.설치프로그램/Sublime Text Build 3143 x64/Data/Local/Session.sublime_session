@@ -1,0 +1,375 @@
+{
+	"folder_history":
+	[
+	],
+	"last_version": 3211,
+	"last_window_id": 3,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 480.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"bg",
+						"bg_logo_a_01"
+					],
+					[
+						"mar",
+						"margin-top"
+					]
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/E/[오후반170918-10회차]스마트기기UIUX디자인-박석호강사/002.HTML학습/Drama_PJ/Dokkaebi.html"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 640.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"bg",
+						"bg_logo_a_01"
+					],
+					[
+						"mar",
+						"margin-top"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "<!doctype html>\n<html>\n    <head>\n        <mata charset=\"utf-8\"></mata>\n        <title>네이버뉴스 요약</title>\n    </head>\n    <body>\n       <h1>네이버 요약뉴스</h1>\n<!--        h1~h6 : 헤드라인 태그(h1이 가장큰 글자임)-->\n       <h2>\n            <a href=\"index.html\"><img src=\"images/nlogo.png\" alt=\"네이버로고\" width=\"50px\" title=\"홈으로가기\"></a>\n<!--\n           img : 이미지배치 태그\n           - src : 이미지경로속성\n           - alt : 이미지설명속성(웹접근성필수!!!-평등의원칙)\n           - width : 가로폭설정 일반속성\n            (비교- height : 높이값 설정속성)\n           - title : 툴팁(풍선글)설정일반속성\n-->\n           <a href=\"sub1.html\" title=\"정치기사\">정치</a> | \n           <a href=\"sub2.html\" title=\"경제기사\">경제</a> | \n           <a href=\"sub3.html\" title=\"세계기사\">세계</a> | \n           <a href=\"sub4.html\" title=\"IT/과학기사\">IT/과학</a> | \n           <a href=\"sub5.html\" title=\"TV/연예기사\">TV/연예</a>\n           \n           \n        </h2> \n        <hr><!--가로선긋기 태그-->\n        <!--메인이미지넣기-->\n        <img src=\"images/network.jpeg\" alt=\"메인이미지\" width=\"500px\">\n        \n        <hr>\n        <h3>네이버요약뉴스 정리자: Tom Brace Parker</h3>\n        \n        \n        \n        \n        \n        \n    </body>\n</html>",
+					"file": "/D/[디지털컨버전스양성과정23회차]-박석호강사/002.HTML학습/Info_PJ/index.html",
+					"file_size": 1453,
+					"file_write_time": 131732431970282377,
+					"settings":
+					{
+						"buffer_size": 1099,
+						"line_ending": "Windows"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/E/[오후반170918-10회차]스마트기기UIUX디자인-박석호강사/002.HTML학습/Drama_PJ/Dokkaebi.html"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/D/[디지털컨버전스양성과정23회차]-박석호강사/002.HTML학습/Info_PJ/index.html",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1099,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										151,
+										151
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 176.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,2,3,-1,-1,-1,-1,588,50,50,706",
+			"project": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

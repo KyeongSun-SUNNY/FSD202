@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>tvN 신서유기8</title>
+    <style>
+        /*기본셋팅*/
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*공통 페이지*/
+        .page {
+            width: 100%;
+            height: 100%;
+            /*body셋팅을 기준함*/
+
+            /*공통배경셋팅*/
+            /*반복여부*/
+            background-repeat: no-repeat;
+            /*고정여부*/
+            background-attachment: fixed;
+            /*위치*/
+            background-position: top;
+            /*크기*/
+            background-size: cover;
+        }
+
+        /*전체 타이틀*/
+        .tit {
+            position: fixed;
+            top: 50px;
+            /*화면에 고정*/
+            width: 100%;
+            /*fixed 포지션은 크기가 내용만큼 
+            설정되므로 100%로 크기를 늘려준다*/
+            margin: 0;
+            padding: 0;
+            /*기본마진,패딩 없앰*/
+            text-align: center;
+            /*글자중앙*/
+            z-index: 1;
+            /*아래쪽 포지션 있는 요소보다 위에 오도록!*/
+        }
+
+        /*메뉴 디자인*/
+        ul#menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /*3無*/
+        }
+
+        /*메뉴 리스트(li) 공통*/
+        #menu li {
+            position: fixed;
+            /*부모? 화면*/
+
+            width: 100px;
+            height: 100px;
+
+            /*글자셋팅*/
+            text-align: center
+        }
+
+
+        /*각 메뉴 셋팅*/
+        /*home 메뉴*/
+        #menu li:first-child {
+            top: 0;
+            left: 0;
+            background-color: #f5d41e;
+            border-radius: 0 0 50% 0;
+            /*둥근모서리 방향별셋팅
+                border-radius:
+                위왼 위오른 아래오른 아래왼
+            
+                왼쪽 위부터 시계방향!
+                -> 2개만쓰면 대각선 셋팅
+            */
+        }
+
+        /*로고셋팅*/
+        .logo {
+            height: 30px;
+            margin-top:30px;
+        }
+        .logo2 {
+            height: 70px;
+            margin-top: 15px;
+        }
+
+        /*코미디언(호동,수근)메뉴*/
+        #menu li:nth-child(2) {
+            top: 0;
+            right: 0;
+            background-color: #f8a24c;
+            border-radius: 0 0 0 50%;
+        }
+
+        /*힙합(지원,규현)메뉴*/
+        #menu li:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background-color: #f45e00;
+            border-radius: 0 50% 0 0;
+        }
+
+        /*베프(민호,피오)메뉴*/
+        #menu li:last-child {
+            bottom: 0;
+            right: 0;
+            background-color: #d69c00;
+            border-radius: 50% 0 0 0;
+        }
+
+
+
+        /*각 페이지*/
+
+        /*1. 첫화면*/
+        #home {
+            background: url(images/bg2.jpg) no-repeat top/cover;
+        }
+
+        /*첫페이지 .inbox*/
+        #home .inbox {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /*인트로 타이틀박스*/
+        .tbox {
+            position: absolute;
+            /*em태그는 inline
+            그런데 absolute를 주면 모든 요소가 무조건 block으로 바뀜*/
+            top: 50%;
+            left: 50%;
+            /*부모? #home .inbox*/
+            transform: translate(-50%, -50%);
+            /*트랜스폼(변형) 중 위치이동 x축,y축 
+            내 크기의 절반만큼 반대방향으로 이동하기(정중앙이동)*/
+            padding: 0;
+            font-style: normal;
+            /*em 기본 italic 변경*/
+        }
+
+        /*인트로 글자*/
+        .ftit {
+            position: relative;
+            display: block;
+            font-weight: bold;
+            font-size: 30px;
+            text-shadow: 3px 3px 1px #222;
+            text-align: center;
+
+            /*트랜지션*/
+            transition: all 2s ease-in-out;
+        }
+
+        /* 강호동글자*/
+        .tit1 {
+            color: #dbd1f4;
+            top: 215px;
+            left: -71%;
+        }
+
+        /*이수근 글자*/
+        .tit2 {
+            color: #f5a9ef;
+            top: 52px;
+            left: 100%;
+        }
+
+        /*은지원 글자*/
+        .tit3 {
+            color: #7cf29c;
+            top: -100px;
+            left: 50%;
+        }
+
+        /*조규현 글자*/
+        .tit4 {
+            color: #de6105;
+            top: -100px;
+            left: -50%;
+        }
+        
+        /*송민호 글자*/
+        .tit5 {
+            color: #f22392;
+            top: -10px;
+            left: 50%;
+        }
+        
+        /*피오 글자*/
+        .tit6 {
+            color: #7ff0e8;
+            top: -100px;
+            left: -80%;
+        }
+
+        /*#home .inbox에 마우스 오버시 각 글자 제자리*/
+        #home .inbox:hover .tit1,
+        #home .inbox:hover .tit2,
+        #home .inbox:hover .tit3,
+        #home .inbox:hover .tit4, 
+        #home .inbox:hover .tit5, 
+        #home .inbox:hover .tit6 {
+            top: 0;
+            left: 0;
+        }
+
+        /*2. 나머지 페이지화면*/
+        #HdSg, #JwGh, #MhPo {
+            background-image: url(images/bg2.jpg);
+        }
+
+        /*내용박스 공통*/
+        .inbox {
+            position: relative;
+            top: 28%;
+            left: 1%;
+            width: 55%;
+            height: 60%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.5);
+
+            outline: 2px solid #ccc;
+        }
+
+
+        /*페이지제목 공통*/
+        .pgtit {
+            position: absolute;
+            top: -85px;
+            left: 10%;
+            /*부모? .inbox*/
+            /*가로방향 중앙이동*/
+            transform: translateX(-50%);
+            
+            /*글자디자인*/
+            font-weight: bold;
+            font-size: 30px;
+            text-shadow: 2px 3px 5px #222;
+            color: #fff;
+        }
+
+
+        /*내용박스 파티션박스 공통*/
+        .inbox>div {
+            width: 50%;
+            /*가로절반*/
+            height: 100%;
+            /*높이전체*/
+            float: left;
+            /*옆으로 흐르게*/
+
+            padding: 15px;
+            box-sizing: border-box;
+            /*박스 크기 지정시 패딩,보더 포함*/
+
+            /*내용이 많아지면 스크롤 자동생성*/
+            overflow: auto;
+            
+        }
+
+        /*스크롤바 디자인변경*/
+        .inbox>div::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .inbox>div::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 5px;
+        }
+
+        .inbox>div::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+
+        /*공통 내용 중제목*/
+        .inbox>div>h2 {
+            position: absolute;
+            background-color: #a32424;
+            padding: 10px;
+            font-family: '맑은 고딕';
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /*공통 내용 소제목*/
+        .inbox>div>h3 {
+            font-family: '맑은 고딕';
+            margin-top: 80px;
+            /*중제목이 absolute이므로 아래있는 소제목은 중제목을 
+            인식하지 못한다! 따라서 마진으로 위쪽 여백을 준다.*/            
+        }
+
+        /*공통 내용 상세리스트*/
+        .inbox>div>ul {
+            font-family: '맑은 고딕';
+            font-size: 23px;
+            line-height: 30px;
+            list-style: circle;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!--1. 전체 타이틀-->
+    <h1 class="tit">
+        <img src="images/p_logo.png" alt="상단로고">
+    </h1>
+
+    <!--2. 메뉴-->
+    <ul id="menu">
+        <li>
+            <a href="#home">
+                <img src="images/tvn_logo.png" alt="로고" class="logo">
+            </a>
+        </li>
+        <li>
+            <a href="#HdSg">
+                <img src="images/hdsg2.png" alt="호동수근" class="logo2">
+            </a>
+        </li>
+        <li>
+            <a href="#JwGh">
+                <img src="images/jwgh2.png" alt="지원규현" class="logo2">
+            </a>
+        </li>
+        <li>
+            <a href="#MhPo">
+                <img src="images/mhpo2.png" alt="민호피오" class="logo2">
+            </a>
+        </li>
+    </ul>
+
+    <!--
+        a요소의 href값으로 "#아이디명"을 쓰면
+        같은 페이지 안의 아이디명 박스 위치로 이동한다!
+    -->
+
+
+    <!--3. 각 페이지-->
+    <!--3-1. 홈-->
+    <div id="home" class="page">
+        <div class="inbox">
+            <em class="tbox">
+                <span class="ftit tit1">호금 호동 호은</span>
+                <span class="ftit tit2">조롱박</span>
+                <span class="ftit tit3">은그리버드</span>
+                <span class="ftit tit4">규부인</span>
+                <span class="ftit tit5">흥부(자)</span>
+                <span class="ftit tit6">표놀부</span>
+            </em>
+        </div>
+    </div>
+    <!--3-2. 호동,수근소개-->
+    <div id="HdSg" class="page">
+        <div class="inbox">
+            <!--페이지제목-->
+            <h2 class="pgtit">맏형라인</h2>
+            <!--강호동내용-->
+            <div>
+                <!--중제목-->
+                <h2>호금 호동 호은 '강호동'</h2>
+                <!--소제목-->
+                <h3>먹어도 먹어도 배고픈 흥부 아들</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>크고 소중한 호동이의 귀환! (feat. 호금, 호은)</li>
+                    <li>혼자는 위험해서 형 동생도 같이 왔어요~</li>
+                    <li>파워★든든한 형제들이 함께하니</li>
+                    <li>식탐은 세 배요, 목청은 삼십 배라네~!
+                    </li>
+                    <li>1+2 존재감 UP 된 삼 형제의</li>
+                    <li>H레전드급 덩치에 맞는 大활약을 부탁하마~</li>
+                </ul>
+
+            </div>
+            <!--이수근내용-->
+            <div>
+                <!--중제목-->
+                <h2>인간 조롱박 '이수근'</h2>
+                <!--소제목-->
+                <h3>예능감으로 속이 꽉 찬 박</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>금은보화는 물론, 예능감도 '꽉꽉' 채웠다!</li>
+                    <li>창의력 大폭발하는 오답 퍼레이드에</li>
+                    <li>적재적소 촌철살인 멘트까지 100% 완비♡</li>
+                    <li>심지어 주크박스♪도 탑재했단 말씀~
+                    </li>
+                    <li>엽록소 페이스가 선사하는 폭소 대잔치!</li>
+                    <li>이 시대 최고의 ☆친환경 예능인☆이 나타났다!</li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!--3-3. 지원,규현소개-->
+    <div id="JwGh" class="page">
+        <div class="inbox">
+            <!--페이지제목-->
+            <h2 class="pgtit">취향상극</h2>
+            <!--은지원내용-->
+            <div>
+                <!--중제목-->
+                <h2>은그리버드 '은지원'</h2>
+                <!--소제목-->
+                <h3>제비 대신 알바 온 은그리버드</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>출연하기로 한 제비가 너무 바빠서
+                        ‘성난 제비’가 대신 왔다!</li>
+                    <li>※취.급.주.의※ 함부로 건드렸다간,</li>
+                    <li>빨간 얼굴이 펑! 터져버릴 수도 있다는데~</li>
+                    <li>인생 N회차 산 듯한 노련함은 물론,</li>
+                    <li>할 말 다 하는 ‘NO 필터링’ 예능 스나이퍼!</li>
+                    <li>세상 어디에도 없는 제비가 찾아온다!!</li>
+                </ul>
+
+            </div>
+            <!--조규현내용-->
+            <div>
+                <!--중제목-->
+                <h2>규부인 '규현'</h2>
+                <!--소제목-->
+                <h3>지고는 못 사는 놀부 부인</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>고운 얼굴에 그렇지 못한 태도♬</li>
+                    <li>높게 솟은 아이라인만큼 심술도 솟았다!</li>
+                    <li>치명적인 아우라의 놀부 부인 납시오~</li>
+                    <li>비관의 아이콘은 이제 STOP☆</li>
+                    <li>그간 못 누린 행운을 싹싹 모아보려는,</li>
+                    <li>규부인의 못 말리는 활약이 시작된다!</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!--3-4. 민호,피오소개-->
+    <div id="MhPo" class="page">
+        <div class="inbox">
+            <!--페이지제목-->
+            <h2 class="pgtit">찐친케미</h2>
+            <!--송민호내용-->
+            <div>
+                <!--중제목-->
+                <h2>흥부(자) '민호'</h2>
+                <!--소제목-->
+                <h3>등골이 휘어도 쿨한 힙스터, 흥부(자)</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>호동과 그 형제들의 아빠♥</li>
+                    <li>늘 배고픈 아들들 덕에 살림살이 다 거덜 났지만,</li>
+                    <li>아낌없이 내던지고 구르는 누더기 SWAG☆</li>
+                    <li>신서유기의 여전한 씬스틸러,</li>
+                    <li>제대로 시동 걸린 지리산 멋쟁이!!</li>
+                </ul>
+            </div>
+            <!--피오내용-->
+            <div>
+                <!--중제목-->
+                <h2>표놀부 '피오'</h2>
+                <!--소제목-->
+                <h3>다 가지고 싶은 욕심쟁이 놀부</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>멍뭉美 넘치는 순둥이 피오가</li>
+                    <li>인생캐 만나 ‘욕심쟁이 표놀부’로 재탄생!</li>
+                    <li>놀부 가문의 명예를 건 처절한 도전!</li>
+                    <li>형들 잡는 매콤~한 마라맛 막내의</li>
+                    <li>무시무시한 업그레이드를 기대하시라~</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
