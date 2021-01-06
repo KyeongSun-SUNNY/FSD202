@@ -1,0 +1,25 @@
+@charset "utf-8";
+/*VOGUE PJ 메인 페이지 CSS - main.css */
+
+/*공통외부css*/
+@import url(core.css);
+@import url(grid_bg.css);
+@import url(grid_set.css);
+
+/*각 영역별 높이값*/
+/*1.상단영역*/
+.t1{
+    height: 100px;
+}
+/*2.배너영역*/
+.b1{
+    height: 480px;
+}
+/*3.컨텐츠영역*/
+.c1{
+    height: 600px;
+}
+/*4.하단영역*/
+.i1{
+    height: 275px;
+}
