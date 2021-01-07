@@ -6,11 +6,46 @@
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 <script>
-$(document).ready(function(e) {
+$(document).ready(function() {
     // 미션: 아래의 각 li에 미니언즈 이미지를 웹으로 찾아서 html로 넣고 이미지크기를 width: 100px로 고정한다. 
+    
+    // JS에서 html 넣기는 innerHTML = "코드"
+    // jQuery에서는 html("코드")    
+    
+    $("#first").html('<img src="https://lh3.googleusercontent.com/proxy/mqaMNHKAiGNb63016tySr6HLEkR82vOJN-3XwOGueYP2Jz7mwlhyvWnltt3rm06b_LCA2Q20Q45MDOgVyVRqaE-1GngHMw0xttdJ24gy8ephfpnIFzrx3dQOW4XWPw2B6flPZ05YZ9l4K5OPmBThwKrf" alt="미니언즈">');
+    
+    $("#second").html('<img src="https://epicbox.co.kr/web/product/big/201908/df72550a87a40147f8366f3e51b1aa8c.jpg" alt="미니언즈">');
+    
+    $("#third").html('<img src="https://t1.daumcdn.net/liveboard/gameabout/ac5d114ce8644855b3a3b6241d30f382.JPG" alt="미니언즈">');
+    
+    /// 이미지 크기고정
+    $(".list img").css({
+        width:"100px"
+    }); ////// css ///////
+    
 	// 각 이미지 클릭시 이미지크기각 클릭할때마다 10px씩 커지게함과 동시에 한번은 오른쪽, 한번은 왼쪽으로 10도씩 기울어지게 애니메이션 하시오.
 	
-	
+    var dg = 10; // 각도
+    
+	$(".list img").click(function(){
+        // console.log("나클릭!");
+        
+        // += 대입연산자를 width 값에 사용하면 기존값에 더해줌!
+        // 기존값에 더해주는 따옴표안에 쓰는 방법은 제이쿼리에서
+        // 처리해 주는 것임!
+        
+        // 클릭된 이미지 나 자신 -> this 키워드
+        $(this).css({
+            width: "+=10px",
+            transform: "rotate("+dg+"deg)",
+            transition: "all .3s"
+        }); ////// css //////
+        
+        // 각도를 변경해서 다음번에 적용된다!
+        // 비? 집 : 놀이동산; -> 조건연산자(삼항연산자)
+        dg === 10 ? dg = -10 : dg = 10;
+        
+    }); ////////// click 함수 ////////////////////
 	
 });//jQuery실행구역
 </script>
