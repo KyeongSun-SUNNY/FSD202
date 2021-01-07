@@ -6,7 +6,7 @@ font-family: 'Play', sans-serif;
 font-family: 'Sunflower', sans-serif;
 */
 
-/*공통class*/
+/*****************공통class*****************/
 /*속박스*/
 .inbox{
     width: 1200px;
@@ -16,6 +16,7 @@ font-family: 'Sunflower', sans-serif;
     /*가로중앙정렬*/
     outline: 2px dashed red;
 }
+
 /*비율유지박스*/
 .rbx{
     position: relative;
@@ -43,6 +44,23 @@ font-family: 'Sunflower', sans-serif;
     right: 0;
 }
 
+/*부모자격 class*/
+.prt {
+    position: relative;
+    /*부모자격*/
+}
+
+/*IR(Image Replacement) class*/
+.bld {    
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+/*태그 리셋하기*/
 
 ul,ol{
   margin: 0;
@@ -63,9 +81,6 @@ a{
 }
 img{
   border: none;/*이미지링크시 테두리없앰*/
-}
-.bld{/*IR숨김*/
-    display: none;
 }
 
 /*태그 초기화 설정*/
