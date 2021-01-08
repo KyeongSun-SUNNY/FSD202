@@ -108,11 +108,20 @@
     /*부모자격*/
     width: 100%;
     height: 50%;
+    box-sizing: border-box;
 }
 
 /*사이간격 미세조정*/
 #news li:first-child {
     padding-bottom: 5px;
+}
+#news li:first-child .atit {
+    bottom: 5px;
+    /*기존값은 0인데5px 떨어지게함!*/
+}
+#news li:last-child {
+    padding-top: 5px;
+    /*사이간격을 옆의 mban과 맞춤!*/
 }
 
 /*뉴스이미지*/
@@ -167,6 +176,9 @@
     -webkit-box-orient: vertical;
     /*8. 단어단위로 떨어져서 생기는 공백없애기 위해 글자단위로 부수기!*/
     word-break: break-all;
+    
+    /*만일 아래쪽에 글자 일부가 보일 경우 높이값을 걸정해준다!*/
+    height: 3.4rem;
 }
 
 /*3-2. 메뉴배너*/
@@ -232,16 +244,29 @@
     color: #fff;
     font: bold 2rem 'Play';
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
-    /*글자그림자 4개로 테두리만들*/
+    /*글자그림자 4개로 테두리만들기*/
 }
-
-
-
-
 
 /**************4.하단영역**************/
 .i1{
     height: 275px;
+}
+
+#info {
+    position: relative;
+    /*부모자격*/
+    background: #000 url(../images/vogue2.png) no-repeat center/313px;
+}
+
+/*주소박스*/
+#info address {
+    position: absolute;
+    /*부모? #info*/
+    bottom: 35px;
+    color: #fff;
+    font: .8rem 'Play';
+    width: 100%;
+    text-align: center;
 }
 
 
