@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Solar System 2D</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap');
+        
         html,body {
             margin: 0;
             padding: 0;
@@ -12,6 +14,34 @@
         }
         body {
             background: url(images/space.jpg) no-repeat 0/cover;
+            overflow: hidden;
+            /*스크롤 없앰*/
+        }
+        
+        /*타이틀*/
+        .tit {
+            position: relative;
+            z-index: 1;
+            /*z-index는 포지션이 static이 아니어야 적용된다!*/
+            text-align: center;
+            font-family: 'Big Shoulders Stencil Text', cursive;
+            color: #fff;
+            font-size: 80px;
+            margin: 0;
+            padding: 20px;
+        }
+        /*축소확대버튼*/
+        .tit2 {
+            padding: 0;
+            font-size: 20px;
+        }
+        .tit2 a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+        }
+        .tit2 a:hover {
+            color: #0ff;
         }
         
         /*태양계박스*/
@@ -34,7 +64,7 @@
             /*커지는 태양 숨기기*/
             border-radius: 50%;/*원*/
             box-shadow: 0 0 100px 40px orange;
-            /*box-shadow: x축 y축 경계선흐림 그림자크기 색;*/
+            /*box-shadow: x축 y축 경계선흐림(blur) 그림자크기(spread) 색;*/
         }
         #sun img {
             width: 100%;
@@ -53,10 +83,128 @@
             }
         }/*키프레임*/
         
+        /*지구*/
+        #earth {
+            position: absolute;
+            top: 85px;
+            left: 85px;
+            width: 80px;
+            height: 80px;
+            background: url(images/earth.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: earth 20s linear infinite;
+        }
+        /*지구회전 키프레임*/
+        /*rotate를 뒤에 한번 더 써서 반대방향으로 설정하면 지구가 정립상으로 주변을 회전한다!*/
+        @keyframes earth {
+            from {
+                transform: rotate(0deg) translateX(-250px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+            }
+        }/*키프레임*/
+        
+        /*달*/
+        #moon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: url(images/moon.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: moon 10s linear infinite;
+        }
+        /*달회전 키프레임*/
+        @keyframes moon {
+            from {
+                transform: rotate(0deg) translateX(80px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(80px) rotate(-360deg);
+            }
+        }/*키프레임*/
+        
+        
+        
+        /*목성*/        
+        #jupiter {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background: url(images/jupiter.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: jupiter 25s linear infinite;
+        }
+        /*목성회전 키프레임*/
+        @keyframes jupiter {
+            from {
+                transform: rotate(0deg) translateY(400px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateY(400px) rotate(-360deg);
+            }
+        }/*키프레임*/
+        
+        /*토성*/        
+        #saturn {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 180px;
+            height: 120px;
+            background: url(images/Saturn.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: saturn 35s linear infinite;
+        }
+        /*토성회전 키프레임*/
+        @keyframes saturn {
+            from {
+                transform: rotate(0deg) translateY(-450px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateY(-450px) rotate(-360deg);
+            }
+        }/*키프레임*/
+        
+        /*명왕성*/        
+        #pluto {
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            width: 50px;
+            height: 50px;
+            background: url(images/pluto.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: pluto 40s linear infinite;
+        }
+        /*명왕성 회전 키프레임*/
+        @keyframes pluto {
+            from {
+                transform: rotate(0deg) translateX(550px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(550px) rotate(-360deg);
+            }
+        }/*키프레임*/
+        
+        
         
     </style>
 </head>
 <body>
+ <!--타이틀-->
+    <h1 class="tit">Solar System</h1>
+    <!--배율버튼-->
+    <h2 class="tit tit2">
+        <a href="">X 1</a> | 
+        <a href="">X 0.5</a> | 
+        <a href="">X 2</a>
+    </h2>
+    
   <!--태양계박스--> 
     <div id="solar">
         <!--태양-->
@@ -64,9 +212,13 @@
             <img src="images/sun.png" alt="sun">
         </div>
         <!--지구-->
-        <div id="earth"></div>
+        <div id="earth">
+            <div id="moon"></div>
+        </div>
         <!--목성-->
-        <div id="jupiter"></div>
+        <div id="jupiter"></div>        
+        <!--토성-->
+        <div id="saturn"></div>
         <!--명왕성-->
         <div id="pluto"></div>
     </div>
