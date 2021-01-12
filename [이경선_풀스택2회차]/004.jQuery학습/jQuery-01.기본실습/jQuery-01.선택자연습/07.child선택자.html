@@ -6,15 +6,34 @@
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 <script>
-$(document).ready(function(e) {
-    // 미션: #container 를 클릭하면 이것의 직계자식인 p태그의 배경색을 노란색, 글자색은 녹색, 글가크기는 42px, 테두리는 5px 점선 빨간색으로 설정하시오!
+//$(document).ready(function() {
+$(function() {
+    // 미션: #container 를 클릭하면 이것의 직계자식인 p태그의 배경색을 노란색, 글자색은 녹색, 글자크기는 42px, 테두리는 5px 점선 빨간색으로 설정하시오!
+    
+    $("#container").click(function(){
+        
+        console.log("나클릭!");
+        
+        //$("#container>p")
+        $(">p",this) // this 키워드를 사용한 선택법
+        // $(선택자,this)
+        // -> 선택자에 (>)를 쓰면 직계자식
+        .css({
+            backgroundColor:"yellow",
+            color:"green",
+            fontSize:"42px",
+            border:"5px dotted red"
+            
+        }); /////// css ///////////////
+        
+    }); ////////// click 함수 //////////////
 		
 		
-	});//////// click //////////////////
+});//jQuery 실행구역
 	
 	
 	
-});//jQuery실행구역
+
 </script>
 </head>
   
@@ -41,7 +60,7 @@ $(document).ready(function(e) {
  
 </div>
 
-<!---------- jQuery code Start ---------->
+<!--************** jQuery code Start **************-->
 <script>
   
 </script>

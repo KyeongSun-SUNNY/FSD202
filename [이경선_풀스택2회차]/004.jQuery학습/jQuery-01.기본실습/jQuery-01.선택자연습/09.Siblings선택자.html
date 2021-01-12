@@ -6,9 +6,31 @@
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 <script>
-$(document).ready(function(e) {
+$(function() {
     //미션: li중 하나를 클릭하면  그 뒤의 형제요소의 li들이 모두 width: 500px, height: 300px로 변경되고 배경이미지를 넣으시오.(배경이미지는 웹경로로 넣고 트랜지션 설정도 하시오.)
 	
+    // 초기설정(트랜지션때문!)
+    $("li")
+        .css({
+            width: "100px",
+            height: "50px"
+        })
+        .click(function(){
+        
+            console.log("나클릭!");
+            $("~li",this).css({
+                width: "500px",
+                height: "300px",
+                background: "url(https://influencer-phinf.pstatic.net/MjAyMDAyMThfMTky/MDAxNTgyMDAyNDk2ODg3.oY6x2KduLKDb0E_c74UVB_pESIyMxL_PJo7GqBvHmCEg.v8Qh15ry9B7s8mNmyAu3lga298uEVGGNahCwNtQfjVAg.JPEG/F8811A68-CB3C-40C8-85B3-8DCC03C25972.jpeg?type=w700) no-repeat 0/cover",
+                transition: "all 2s"
+            }); ////// css ///////
+        
+        }); /////// click 함수 ////////
+    
+    
+    
+        
+    
 	
 	
 });//jQuery실행구역
