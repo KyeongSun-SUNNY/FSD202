@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackPink</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!--1.타이틀-->
+    <h1 class="tit">BLACKPINK</h1>
+    <!--2.메뉴버튼-->
+    <nav class="bmv">
+        <ul>
+            <li>
+                <a href="" onclick="chgbmv(this);return false;">HOME</a>
+                <!--
+                    href는 원래 이동의 특성이 있으므로
+                    onclick에서 함수를 호출시 클릭됨을 인해
+                    페이지이동(새로고침)이 되어진다.
+                    이것을 막기위해 return false를 함수호출 뒤에 쓴다.
+                    이것의 목적은 a태그 이동을 취소하는 것이다!
+                    (리턴폴스-돌아갈때 불꺼!)
+                -->
+            </li>
+            <li>
+                <a href="" onclick="chgbmv(this);return false;">붐바야</a>
+            </li>
+            <li>
+                <a href="" onclick="chgbmv(this);return false;">불장난</a>
+            </li>
+            <li>
+                <a href="" onclick="chgbmv(this);return false;">마지막처럼</a>
+            </li>
+            <li>
+                <a href="" onclick="chgbmv(this);return false;">뚜두 뚜두</a>
+            </li>
+            <li>
+                <a href="" onclick="chgbmv(this);return false;">Love Sick</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--3.큐브-->
+    <section>        
+                <div class="cube">
+                    <span>
+                        <video src="images/BLACKPINK.mp4" autoplay="" muted="" loop=""></video>
+                    </span>
+                    <span>
+                        <video src="images/boombaya.mp4" autoplay="" muted="" loop=""></video>
+                    </span>
+                    <span>
+                        <video src="images/fire.mp4" autoplay="" muted="" loop=""></video>
+                    </span>
+                    <span>
+                       <video src="images/finally.mp4" autoplay="" muted="" loop=""></video>
+                    </span>
+                    <span>
+                        <video src="images/ddudo.mp4" autoplay="" muted="" loop=""></video>
+                    </span>
+                    <span>
+                        <video src="images/lovesick.mp4" autoplay="" muted="" loop=""></video>
+                    </span>
+                </div>
+    </section>
+    
+    <!--4.곡설명박스-->
+    <div class="mvbox">
+        <article class="mvtxt">
+            <h2 id="mvname">불장난</h2>
+            <p id="mvinfo">
+                강렬한 드럼 비트가 주축이 되어 리드미컬한 피아노 패턴과
+                독특한 신스의 반복으로 사운드를 풍부하게 채워주며
+                후렴구는 불타오르는듯한 느낌을 강렬한 연주로 아낌없이
+                보여준다. 각 멤버들의 유니크한 보이스가 돋보이는 EDM곡으로
+                멈출 수 없는 떨림과 끌림, 그리고 걷잡을 수 없는 사랑의
+                불장난을 가사로 담아냈다.
+            </p>
+        </article>
+    </div>
+
+</body></html>
