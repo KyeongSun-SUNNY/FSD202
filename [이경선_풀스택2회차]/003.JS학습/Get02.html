@@ -49,7 +49,7 @@
         // indexOf(문자열) -> 찾는 문자열의 순번을 리턴함!
         // 만약 찾는 문자열이 없으면 -1을 리턴함!!!!
         console.log("문자열 찾기:"+pm.indexOf("?"));
-        if(pm.indexOf("?")===1){
+        if(pm.indexOf("?")=== -1){
             alert("비정상적인 접근입니다!");
             location.href = "Get01.html";
         } //////// if ////////////////////
@@ -88,6 +88,19 @@
             function(){
             
             console.log("로딩완료!");
+            
+            // 타이틀 요소
+            var tit = document.querySelector("#title");
+            
+            // 1. 타이틀 넣기
+            tit.innerText = pm;
+            
+            // 2. 배경색 넣기 (scolor객체에 샵명과 연결!)
+            tit.style.backgroundColor = scolor[pm];
+            
+            // 3. 메인박스 배경이미지 변경하기
+            document.querySelector("#main")
+            .style.backgroundImage = "url(images/shop_"+scolor[pm]+".jpg)";
             
         }); ///////////////// 로드 구역 //////////////////////////////
         /////////////////////////////////////////////////////////////
