@@ -198,7 +198,8 @@
     
     /*14. 뉴스 글자조정*/
     .atit {
-        height: 5.4rem;
+        height: 5.5rem;
+        line-height: 2rem;
         padding: 21px;
     }
     
