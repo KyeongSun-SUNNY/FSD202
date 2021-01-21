@@ -264,6 +264,7 @@ body::before {
 /*1-1.타이틀*/
 .tpart h2 {
     padding-top: 12px;
+    margin-left: -2px;
 }
 
 /*더보기 버튼 조정*/
@@ -335,7 +336,7 @@ body::before {
 /*3.뉴스와 공지*/
 /*3-1.타이틀*/
 .npart h2 {
-    padding-top: 10px;
+    padding-top: 12px;
     padding-bottom: 7px;
     font-size: 13px;
     border-bottom: 1px solid #ccc;
@@ -344,7 +345,6 @@ body::before {
 /*더보기조정*/
 .npart .more {
     margin-right: 0;
-    margin-top: 0;
 }
 
 /*3-2.뉴스리스트*/
@@ -379,7 +379,7 @@ body::before {
 /*3-3.FAQ박스*/
 .faq{
     width: 220px;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: -2px;
 }
 
@@ -420,4 +420,53 @@ body::before {
     background-color: #f0f0f0;
 }
 
+/*선택된 탭메뉴에 클래스 "on"으로 설정하기*/
+.tabTit li.on{
+    border-bottom: none;
+}
+.tabTit li.on a{
+    color: #3345a9;
+    background-color: #fff;
+}
 
+/*탭메뉴 내용박스*/
+.tabCont{
+    width: 100%;
+    height: 165px;
+}
+/*li공통*/
+.tabCont li{
+    width: 100%;
+    height: 100%;
+    display: none;/*모두안보임*/
+}
+
+/*페이스북*/
+.tabCont li:nth-child(1){
+    /*background-color: #ffacac;*/
+}
+/*블로그*/
+.tabCont li:nth-child(2){
+    /*background-color: #acbfff;*/
+}
+/*트위터*/
+.tabCont li:nth-child(3){
+    /*background-color: #fff5ac;*/
+    overflow-y: scroll;
+}
+/*인스타그램*/
+.tabCont li:nth-child(4){
+    /*background-color: #acffbf;*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+/*인스타 아이프레임*/
+.tabCont li:nth-child(4) iframe{
+    
+}
+
+
+/*선택된 탭 내용 li만 보이는 클래스 "on"*/
+.tabCont li.on{
+    display: block;
+}
