@@ -43,18 +43,23 @@ ol {
     position: relative;
     /*부모자격*/
     height: 40px;
-    background-color: #434343
+    background-color: #434343;
 }
 
 .t2 {
     position: relative;
     /*부모자격*/
     height: 65px;
-    /*outline: 1px solid yellow*/;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 999;
+    border-bottom: 1px solid #666;
+    /*outline: 1px solid yellow*/
+    ;
 }
 
 /*1-2.상단메뉴 li셋팅*/
-.t1 li, .t2 li {
+.t1 li,
+.t2 li {
     float: left;
 }
 
@@ -65,6 +70,7 @@ ol {
     top: 11px;
     left: 20px;
 }
+
 .sub {
     position: absolute;
     /*부모? .t1*/
@@ -77,6 +83,11 @@ ol {
     /*부모? .t2*/
     top: 18px;
     left: 43%;
+}
+
+#logo img:last-child {
+    opacity: 0;
+    /*처음에 안보임*/
 }
 
 .tli1 {
@@ -124,9 +135,41 @@ ol {
 }
 
 .t2 a {
+    color: #ffff;
     font-size: 18px;
     text-decoration: none;
+    text-shadow: -1px 0 #434343, 0 1px #434343, 1px 0 #434343, 0 -1px #434343;
 
+}
+
+/*1-6. 상단영역 .t1 a태그에 마우스오버시 디자인 변경*/
+.t1 a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/*1-7. 상단영역 #top에 마우스오버시 .t2 배경색 글자색 이미지 변경*/
+#top:hover .t2{
+    background-color: #fff;
+}
+
+#top:hover .t2 a {
+    color: #434343;
+    text-shadow: none;
+}
+
+#top:hover .t2 #logo img:first-child {
+    opacity: 0;
+}
+
+#top:hover .t2 #logo img:last-child {
+    opacity: 1;
+}
+
+/*1-8. 상단메뉴 .t2 a태그에 마우스 오버시 디자인변경*/
+.t2 a:hover {
+    text-decoration: underline;
+    font-weight: bold;    
 }
 
 /**********************2.배너영역**********************/
@@ -136,84 +179,119 @@ ol {
     position: relative;
     /*부모자격*/
 }
+
 /*배너 중앙속박스*/
-.b1,#ban {
-    height: 650px;
+.b1,
+#ban {
+    height: 715px;
 }
+
 .ban {
     position: relative;
-    /*부모자격*/    
-    top: -180px;
+    /*부모자격*/
+    top: -150px;
 }
 
 /*2-2. 항공기 정보셋팅*/
 #Sdes {
     position: absolute;
-    /*부모? #ban*/    
+    /*부모? #ban*/
     top: 30px;
-    left: 42%;
-    width: 230px;
-    height: 180px;
+    left: 0;
+    /*    width: 230px;*/
+    height: 150px;
     margin: 0;
     padding: 0;
 }
-.Sdes,.Sdes li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;    
-}
+
+.Sdes,
 .Sdes li {
-    opacity: 0;
-    
-    /*트랜지션:속시이지*/
-    transition: opacity .8s ease-in-out;
-}
-.Sdes li.on {
-    opacity: 1;
-    z-index: 3;
-    /*현재 보이는 슬라이드가 맨위로 오게함!
-    클릭가능!*/
-}
-/*a태그 기본셋팅*/
-#Sdes {
-    position: relative;
-    /*부모자격*/
-    text-align: center;
-}
-.Sdes a {
-    color: #fff;
-    text-shadow: 2px 2px 10px #000;
-    line-height: 50px;
-}
-.sname {
-    font-size: 30px;
-}
-.des {
-    font-size: 24px;
-}
-/*항공기 버튼셋팅*/
-.btn {
-    width: 100px;
-    font-size: 18px;   
-    color: #434343;
-}
-
-
-/*2-3.배너슬라이드 셋팅*/
-/*ul,li모두 absolute로 겹치게*/
-.slider,.slider li {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-.Aslider,.Aslider li {
+
+.Sdes li {
+    opacity: 0;
+
+    /*트랜지션:속시이지*/
+    transition: opacity .8s ease-in-out;
+}
+
+.Sdes li.on {
+    opacity: 1;
+    z-index: 3;
+    /*현재 보이는 슬라이드가 맨위로 오게함!
+    클릭가능!*/
+}
+
+/*a태그 기본셋팅*/
+#Sdes {
+    position: relative;
+    /*부모자격*/
+    text-align: center;
+}
+
+.Sdes span {
+    color: #fff;
+    text-shadow: 2px 2px 10px #000;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.sname {
+    font-size: 30px;
+}
+
+.des {
+    font-size: 24px;
+}
+
+/*항공기 버튼셋팅*/
+.btn {
+    position: absolute;
+    top: 115px;
+    left: 496px;
+    width: 80px;
+    font-size: 18px;
+    color: #434343;
+    cursor: pointer;
+}
+
+
+/*2-3.배너슬라이드 셋팅*/
+
+.airBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: -215px;
+    overflow: hidden;
+}
+
+
+/*ul,li모두 absolute로 겹치게*/
+.slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Aslider,
+.Aslider li {
     position: absolute;
     top: 46px;
-    left: 5px;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -221,14 +299,16 @@ ol {
 /*슬라이드 리스트 공통*/
 .slider li {
     opacity: 0;
-    
+
     /*트랜지션:속시이지*/
     transition: opacity .8s ease-in-out;
 }
+
 .Aslider li {
-    opacity: 0;    
-    transition: opacity .8s ease-in-out;
+    opacity: 0;
+    transition: opacity .8s ease-in-out .4s;
 }
+
 /*보이는 리스트 class*/
 /*on이라는 클래스를 설정한li디자인*/
 .slider li.on {
@@ -237,6 +317,7 @@ ol {
     /*현재 보이는 슬라이드가 맨위로 오게함!
     클릭가능!*/
 }
+
 .Aslider li.on {
     opacity: 1;
     z-index: 2;
@@ -244,83 +325,100 @@ ol {
 
 /*2-4.배너슬라이드 이미지 넣기*/
 /*슬라이드 개별셋팅(배경)*/
-.slider li:nth-child(1){
+.slider li:nth-child(1) {
     background: url(../images/bg-carousel-b787.jpg) no-repeat top/100% 100%;
 }
-.slider li:nth-child(2){
+
+.slider li:nth-child(2) {
     background: url(../images/bg-carousel-b777.jpg) no-repeat top/100% 100%;
 }
-.slider li:nth-child(3){
+
+.slider li:nth-child(3) {
     background: url(../images/bg-carousel-b747.jpg) no-repeat top/100% 100%;
 }
-.slider li:nth-child(4){
+
+.slider li:nth-child(4) {
     background: url(../images/bg-carousel-b737.jpg) no-repeat top/100% 100%;
 }
-.slider li:nth-child(5){
+
+.slider li:nth-child(5) {
     background: url(../images/bg-carousel-a380.jpg) no-repeat top/100% 100%;
 }
-.slider li:nth-child(6){
+
+.slider li:nth-child(6) {
     background: url(../images/bg-carousel-a330.jpg) no-repeat top/100% 100%;
 }
-.slider li:nth-child(7){
+
+.slider li:nth-child(7) {
     background: url(../images/bg-carousel-a220.jpg) no-repeat top/100% 100%;
 }
 
 /*슬라이드 개별셋팅(항공기)*/
-.Aslider li:nth-child(1){
-    background: url(../images/img-carousel-b787.png) no-repeat center;
+.Aslider li:nth-child(1) {
+    background: url(../images/img-carousel-b787.png) no-repeat center/100%;
 }
-.Aslider li:nth-child(2){
-    background: url(../images/img-carousel-b777.png) no-repeat center;
+
+.Aslider li:nth-child(2) {
+    background: url(../images/img-carousel-b777.png) no-repeat center/100%;
 }
-.Aslider li:nth-child(3){
-    background: url(../images/img-carousel-b747.png) no-repeat center;
+
+.Aslider li:nth-child(3) {
+    background: url(../images/img-carousel-b747.png) no-repeat center/100%;
 }
-.Aslider li:nth-child(4){
-    background: url(../images/img-carousel-b737.png) no-repeat center;
+
+.Aslider li:nth-child(4) {
+    background: url(../images/img-carousel-b737.png) no-repeat center/100%;
 }
-.Aslider li:nth-child(5){
-    background: url(../images/img-carousel-a380.png) no-repeat center;
+
+.Aslider li:nth-child(5) {
+    background: url(../images/img-carousel-a380.png) no-repeat center/100%;
 }
-.Aslider li:nth-child(6){
-    background: url(../images/img-carousel-a330.png) no-repeat center;
+
+.Aslider li:nth-child(6) {
+    background: url(../images/img-carousel-a330.png) no-repeat center/100%;
 }
-.Aslider li:nth-child(7){
-    background: url(../images/img-carousel-a220.png) no-repeat center;
+
+.Aslider li:nth-child(7) {
+    background: url(../images/img-carousel-a220.png) no-repeat center/100%;
 }
 
 /*2-5.배너이동버튼*/
-.abtn{
+.abtn {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     /*세로중앙이동*/
     width: 25px;
     height: 49px;
-    z-index: 2;/*배너리스트보다 위에 옴!*/
-    /*outline: 2px solid red;*/   
+    z-index: 2;
+    /*배너리스트보다 위에 옴!*/
+    /*outline: 2px solid red;*/
 }
+
 /*왼쪽이동버튼*/
 .lb {
     left: 30px;
     background: url(../images/btn_shop_bn_left.png) no-repeat;
 }
+
 /*오른쪽이동버튼*/
-.rb{
+.rb {
     right: 30px;
     background: url(../images/btn_shop_bn_right.png) no-repeat;
 }
+
 /*이동버튼 공통 마우스 오버시 배경이미지 위치변경하기*/
-.abtn:hover{
+.abtn:hover {
     background-position: 0 -49px;
 }
 
 /*2-6.블릿버튼*/
-.prt{
+.prt {
     position: relative;
     /*부모자격 부여 class*/
-    top: -30px;
+    margin-top: -600px;
 }
+
 .indic {
     position: absolute;
     /*부모? 싸고있는 파티션박스(.prt 줌)*/
@@ -329,43 +427,15 @@ ol {
     z-index: 2;
     /*포지션있어야적용!*/
 }
-.indic img {    
+
+.indic img {
     padding: 0 3px;
 }
 
 /*2-7.IR배경이미지설명*/
-.bld{
+.bld {
     display: block;
     width: 0;
     height: 0;
     overflow: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
